@@ -6,10 +6,7 @@ import {
 import { useState } from "react";
 import "./App.css";
 import { Tree } from "react-arborist";
-
-const convert = (pkg: Package) => {
-  return pkg;
-};
+import { convertPackage } from "@keneanung/nexus-simplified-scripting-converter";
 
 const defaultReflex: FunctionReflex = {
   type: "function",
@@ -42,6 +39,12 @@ const findReflexById = (id: number, reflex: Reflex): Reflex | undefined => {
   }
   return undefined;
 };
+
+const convert = (pkgToConvert: Package) => {
+  const conversionPackage = structuredClone(pkgToConvert);
+  convertPackage(conversionPackage);
+  return conversionPackage;
+}
 
 function App() {
   const [pkg, setPkg] = useState<Package>(defaultPackage);
