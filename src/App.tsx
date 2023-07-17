@@ -1,5 +1,5 @@
 import {
-  Function,
+  FunctionReflex,
   Package,
   Reflex,
 } from "@keneanung/iron-realms-nexus-typings";
@@ -11,7 +11,7 @@ const convert = (pkg: Package) => {
   return pkg;
 };
 
-const defaultReflex: Function = {
+const defaultReflex: FunctionReflex = {
   type: "function",
   enabled: true,
   id: 2,
