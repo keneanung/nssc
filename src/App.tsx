@@ -46,6 +46,16 @@ const convert = (pkgToConvert: Package) => {
   return conversionPackage;
 }
 
+let nextId = 0;
+const addIds = (reflex: Reflex) => {
+  reflex.id = nextId++;
+  if(reflex.type === 'group'){
+    for (const item of reflex.items) {
+      addIds(item)
+    }
+  }
+}
+
 function App() {
   const [pkg, setPkg] = useState<Package>(defaultPackage);
   const convertedPkg = convert(pkg);
@@ -67,6 +77,7 @@ function App() {
     const fileContent = await file.text();
     const pkg = JSON.parse(fileContent) as Package;
     console.log(pkg);
+    addIds(pkg)
     setPkg(pkg);
   };
 
