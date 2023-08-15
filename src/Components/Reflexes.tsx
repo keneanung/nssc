@@ -1,4 +1,4 @@
-import { Group, Package, Reflex, FunctionReflex, Alias, Keybind, Action, Trigger, Event } from "@keneanung/iron-realms-nexus-typings";
+import { Group, Package, Reflex, FunctionReflex, Alias, Keybind, Trigger, Event } from "@keneanung/iron-realms-nexus-typings";
 import { ReactNode } from "react";
 import { Card, Typography, Checkbox, FormControlLabel, Stack, TextField } from '@mui/material'
 import { CodeBlock } from "./CodeBlock";
