@@ -50,7 +50,7 @@ const renderReflex = (reflex?: Reflex) => {
 const BaseReflexView = ({ reflex, children }: { reflex: Reflex, children?: ReactNode }) => {
   return (
     <Card variant='outlined' sx={{ width: '100%', overflow: 'auto' }}>
-      <Stack>
+      <Stack spacing={2}>
         <Typography color="text.secondary">{reflex.name}</Typography>
         <FormControlLabel disabled control={<Checkbox checked={reflex.enabled} />} label='enabled' />
         {children}
@@ -78,7 +78,7 @@ const FunctionView = ({ reflex }: { reflex: FunctionReflex }) => {
 const KeybindView = ({ reflex }: { reflex: Keybind }) => {
   return (
     <BaseReflexView reflex={reflex}>
-      <Stack direction='row'>
+      <Stack direction='row' spacing={2}>
         <TextField label='key' variant="outlined" value={reflex.key} />
         <FormControlLabel disabled control={<Checkbox checked={reflex.key_shift} />} label='shift' />
         <FormControlLabel disabled control={<Checkbox checked={reflex.key_ctrl} />} label='ctrl' />
@@ -94,7 +94,7 @@ const KeybindView = ({ reflex }: { reflex: Keybind }) => {
 const AliasView = ({ reflex }: { reflex: Alias }) => {
   return (
     <BaseReflexView reflex={reflex}>
-      <Stack direction='row'>
+      <Stack direction='row' spacing={2}>
         <TextField label='match type' variant="outlined" value={reflex.matching} />
         <TextField label='text' variant="outlined" value={reflex.text} />
         <FormControlLabel disabled control={<Checkbox checked={reflex.case_sensitive} />} label='case sensitive' />
@@ -111,7 +111,7 @@ const AliasView = ({ reflex }: { reflex: Alias }) => {
 const TriggerView = ({ reflex }: { reflex: Trigger }) => {
   return (
     <BaseReflexView reflex={reflex}>
-      <Stack direction='row'>
+      <Stack direction='row' spacing={2}>
         <TextField label='match type' variant="outlined" value={reflex.matching} />
         <TextField label='text' variant="outlined" value={reflex.text} />
         <FormControlLabel disabled control={<Checkbox checked={reflex.case_sensitive} />} label='case sensitive' />
@@ -127,7 +127,7 @@ const TriggerView = ({ reflex }: { reflex: Trigger }) => {
 const EventView = ({ reflex }: { reflex: Event }) => {
   return (
     <BaseReflexView reflex={reflex}>
-      <Stack direction='row'>
+      <Stack direction='row' spacing={2}>
         <TextField label='event type' variant="outlined" value={reflex.evtype} />
         <TextField label='event subtype' variant="outlined" value={reflex.evsubtype} />
       </Stack>
