@@ -97,9 +97,9 @@ const AliasView = ({ reflex }: { reflex: Alias }) => {
       <Stack direction='row' spacing={2}>
         <TextField label='match type' variant="outlined" value={reflex.matching} />
         <TextField label='text' variant="outlined" value={reflex.text} />
-        <FormControlLabel disabled control={<Checkbox checked={reflex.case_sensitive} />} label='case sensitive' />
+        <FormControlLabel disabled control={<Checkbox checked={reflex.case_sensitive} />} label='Match uppercase/lowercase exactly' />
         <FormControlLabel disabled control={<Checkbox checked={reflex.prefix_suffix} />} label='prefix suffix' />
-        <FormControlLabel disabled control={<Checkbox checked={reflex.whole_words} />} label='whole words' />
+        <FormControlLabel disabled control={<Checkbox checked={reflex.whole_words} />} label='Match whole words only' />
       </Stack>
       <Stack>
         {reflex.actions.map(renderAction)}
@@ -114,8 +114,8 @@ const TriggerView = ({ reflex }: { reflex: Trigger }) => {
       <Stack direction='row' spacing={2}>
         <TextField label='match type' variant="outlined" value={reflex.matching} />
         <TextField label='text' variant="outlined" value={reflex.text} />
-        <FormControlLabel disabled control={<Checkbox checked={reflex.case_sensitive} />} label='case sensitive' />
-        <FormControlLabel disabled control={<Checkbox checked={reflex.whole_words} />} label='whole words' />
+        <FormControlLabel disabled control={<Checkbox checked={reflex.case_sensitive} />} label='Match uppercase/lowercase exactly' />
+        <FormControlLabel disabled control={<Checkbox checked={reflex.whole_words} />} label='Match whole words only' />
       </Stack>
       <Stack>
         {reflex.actions.map(renderAction)}
