@@ -157,7 +157,7 @@ const HighlightActionView = ({ action }: { action: HighlightAction }) => {
 const IfActionView = ({ action }: { action: IfAction }) => {
   return (
     <BaseActionView action={action}>
-      <FormControlLabel disabled control={<Checkbox checked={action["cond-cs"]} />} label='prefix suffix' />
+      <FormControlLabel disabled control={<Checkbox checked={action["cond-cs"]} />} label='Match uppercase/lowercase exactly' />
       <TextField label='Condition modification' variant="outlined" value={action["cond-mod"]} />
       <TextField label='Condition check' variant="outlined" value={action["cond-op"]} />
       <TextField label='Data source 1 for condition' variant="outlined" value={action["cond-type1"]} />
@@ -216,7 +216,7 @@ const NotifyActionView = ({ action }: { action: NotifyAction }) => {
 const RepeatActionView = ({ action }: { action: RepeatAction }) => {
   return (
     <BaseActionView action={action}>
-      <FormControlLabel disabled control={<Checkbox checked={action["cond-cs"]} />} label='prefix suffix' />
+      <FormControlLabel disabled control={<Checkbox checked={action["cond-cs"]} />} label='Match uppercase/lowercase exactly' />
       <TextField label='Condition modification' variant="outlined" value={action["cond-mod"]} />
       <TextField label='Condition check' variant="outlined" value={action["cond-op"]} />
       <TextField label='Data source 1 for condition' variant="outlined" value={action["cond-type1"]} />
